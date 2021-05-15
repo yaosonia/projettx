@@ -1,0 +1,147 @@
+{% extends "BackBundle::base.html.twig"%}
+
+{% block title%}Formation{% endblock title%}
+
+{% block style %}
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ ('../../back/plugins/fontawesome-free/css/all.min.css') }}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ ('../../back/dist/css/adminlte.min.css') }}">
+{% endblock style %}
+
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+            </div><!-- /.container-fluid -->
+        </section>
+        <div class="col-md-8 offset-2">
+        {% for msg in app.session.getflashbag.get('formation.success') %}
+            <div class="alert alert-success mb-2" role="alert">
+                <strong>Infos</strong> {{ msg }}
+            </div>
+        {% endfor %}
+        {% for msg in app.session.getflashbag.get('formation.error') %}
+            <div class="alert alert-warning mb-2" role="alert">
+                <strong>Infos</strong> {{ msg }}
+            </div>
+        {% endfor %}
+        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <!-- left column -->
+                    <div class="col-md-8 offset-2">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">SAISIR LES INFORMATIONS DE LA FORMATION</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            {{form_start(form)}}
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Formation</label>
+                                    {{form_widget(form.libelleformation)}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Description</label>
+                                    {{form_widget(form.descriptionformation)}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Prix</label>
+                                    {{form_widget(form.prix)}}
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" style="float: right;">Enregistrer</button>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        {{form_end(form)}}
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Liste des formations</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Formation</th>
+                                    <th>Description</th>
+                                    <th>Prix</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for f in formations %}
+                                <tr>
+                                    <td>{{ f.libelleformation }}</td>
+                                    <td>{{ f.descriptionformation }}</td>
+                                    <td>{{ f.prix }}</td>
+                                </tr>
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock content %}
+
+{% block script %}
+    <!-- jQuery -->
+    <script src="{{ ('../../back/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ ('../../back/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{{ ('../../back/dist/js/adminlte.min.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ ('../../back/dist/js/demo.js') }}"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+{% endblock script %}

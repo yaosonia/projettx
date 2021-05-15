@@ -1,0 +1,102 @@
+{% extends "BackBundle::base.html.twig"%}
+
+{% block title%}Liste des élèves{% endblock title%}
+
+{% block style %}
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ ('../../back/plugins/fontawesome-free/css/all.min.css') }}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ ('../../back/dist/css/adminlte.min.css') }}">
+{% endblock style %}
+
+{% block content %}
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Liste des professeurs</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Prénom(s)</th>
+                                        <th>Adresse</th>
+                                        <th>Email</th>
+                                        <th>Téléphone</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for p in prof %}
+                                    <tr>
+                                        <td>{{ p.nom }}</td>
+                                        <td>{{ p.prenom }}</td>
+                                        <td>{{ p.numerovoie }}{{ p.nomvoie }}{{ p.codepostal }}{{ p.ville }}</td>
+                                        <td>{{ p.email }}</td>
+                                        <td>{{ p.telephone }}</td>
+                                    </tr>
+                                    </tbody>
+                                    {% endfor%}
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</div>
+<!-- ./wrapper -->
+
+{% endblock content %}
+
+{% block script %}
+    <!-- jQuery -->
+    <script src="{{ ('../../back/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ ('../../back/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{{ ('../../back/dist/js/adminlte.min.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ ('../../back/dist/js/demo.js') }}"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+{% endblock script %}
+

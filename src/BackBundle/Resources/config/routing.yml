@@ -1,0 +1,39 @@
+admin_homepage:
+    path:     /accueil
+    defaults: { _controller: BackBundle:Default:index }
+
+save_eleve:
+    path:     /enregistrementeleve
+    defaults: { _controller: UserBundle:Eleve:save }
+
+liste_eleve:
+    path:     /listeleve
+    defaults: { _controller: UserBundle:Eleve:liste }
+
+save_prof:
+    path:     /enregistrementprof
+    defaults: { _controller: BackBundle:Prof:save }
+
+listeprof:
+    path:     /listeprof
+    defaults: { _controller: BackBundle:Prof:listeprof }
+
+listeparent:
+    path:     /listeparents
+    defaults: { _controller: BackBundle:Prof:listeparent }
+
+formation:
+    path:     /formation
+    defaults: { _controller: BackBundle:Formation:index }
+
+inscrireleve:
+    path:     /inscrireleve
+    defaults: { _controller: BackBundle:Formation:inscrire }
+
+updateinscription:
+    path:     /modificationinscription/{id}
+    defaults: { _controller: BackBundle:Formation:update }
+
+deleteinscription:
+    path:     /suppresioninscription/{id}
+    defaults: { _controller: BackBundle:Formation:delete }

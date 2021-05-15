@@ -1,0 +1,10 @@
+front_homepage:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin_homepage:
+    resource: "@BackBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

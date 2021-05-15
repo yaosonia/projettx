@@ -1,0 +1,19 @@
+homepage:
+  path:     /
+  defaults: { _controller: FrontBundle:Default:index }
+
+mariamontesorri:
+  path:     /mariamontesorri
+  defaults: { _controller: FrontBundle:Pedagogie:index }
+
+inscription:
+  path:     /modaliteinscription
+  defaults: { _controller: FrontBundle:Inscription:modalite }
+
+frais:
+  path:     /frais
+  defaults: { _controller: FrontBundle:Inscription:frais }
+
+contact:
+  path:     /contact
+  defaults: { _controller: FrontBundle:Default:contact }

@@ -1,0 +1,65 @@
+{% extends "BackBundle::base.html.twig"%}
+
+{% block title%}Modifier l'inscription{% endblock title%}
+
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <!-- left column -->
+                    <div class="col-md-8 offset-2">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">SELECTIONNER L'ELEVE PUIS LA FORMATION</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            {{form_start(form)}}
+                            {{ form_widget(form._token) }}
+                            <div class="card-body">
+                                <div class="form-group" style="width: 100%;">
+                                    {{ form_errors(form.eleve) }}
+                                    {{ form_widget(form.eleve,{'attr':{'required':'','class':' form-control select2'}}) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_errors(form.formation) }}
+                                    {{ form_widget(form.formation,{'attr':{'required':'','class':' form-control select2'}}) }}
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" style="float: right;">Enregistrer</button>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        {{form_end(form)}}
+                    </div>
+                </div>
+                <!--/.col (left) -->
+            </div>
+            <!-- /.row -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+{% endblock script %}

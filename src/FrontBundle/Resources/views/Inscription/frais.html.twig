@@ -1,0 +1,86 @@
+{% extends "FrontBundle::base.html.twig"%}
+
+{% block title%}Frais d'inscription{% endblock title%}
+
+{% block content %}
+ <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>      
+    </a>
+  <!-- END SCROLL TOP BUTTON -->
+ <section id="mu-course-content">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="mu-course-content-area">
+            <div class="row">
+              <div class="col-md-9">
+                <!-- start course content container -->
+                <div class="mu-course-container mu-blog-archive">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <article class="mu-blog-single-item">
+                        <figure class="mu-blog-single-img">
+                          <a href="#"><img src="{{('../../front/assets/img/blog/frais.png')}}" alt="img"></a>                   
+                        </figure>
+                       
+                      </article> 
+                    </div>                  
+                  </div>
+                   <div class="mu-blog-description col-md-12">
+                          <p>Frais pédagogiques: matériel pédagogique 60€/enfant + participation forfaitaire spectacles 20€/enfant.</p>
+
+                          Frais d’écolage: en fonction des revenus et des allocations familiales, 40% de réduction à partir du deuxième enfant avec écolage minimum de 250 € par enfant.</p>
+
+                          <p style="font-weight: bold;">Frais de repas, deux options s’offrent à vous :</p>
+                            <blockquote>
+                              repas pris à l’école, 80 €/ mois et par enfant (majoritairement bio ou local).</p>
+                              pour les enfants ayant un PAI, panier repas amené par l’enfant, l’accès à la cuisine n’est pas possible pour réchauffer les plats.</p>
+                            </blockquote>
+
+                          <p style="font-weight: bold;">Garderie :</p>
+
+                          <p>Une garderie payante (1.50 € la ½ heure) est organisée le matin de 8h à 8h30, et le soir de 16h45 à 18h30.
+                          Chaque famille verse lors du dépôt du dossier d’inscription un chèque (ou prélèvement) d’un acompte en fonction de la formule choisie.</p>
+
+                          <p style="font-weight: bold;">Deux formules possibles :</p>
+                            <blockquote>
+                              90€ renouvelable pour les fréquentations régulières.</p>
+                              15€ pour l’utilisateur exceptionnel, non renouvelable et non remboursable.</p>
+                            </blockquote>
+                          <p style="font-weight: bold;">Retard après 18h30:</p>
+                            <blockquote>
+                              5€ par ¼ d’heure retard prévenu</p>
+                              10€ par ¼ d’heure retard non prévenu</p>
+                            </blockquote> 
+                          </p>
+                        </div>
+                </div>
+                <!-- end course content container -->
+              </div>
+              <div class="col-md-3">
+                <!-- start sidebar -->
+                <aside class="mu-sidebar">
+                  <!-- start single sidebar -->
+                  <div class="mu-single-sidebar">
+                    <h3>Categories</h3>
+                    <ul class="mu-sidebar-catg">
+                      <li><a href="#">Web Design</a></li>
+                      <li><a href="">Web Development</a></li>
+                      <li><a href="">Math</a></li>
+                      <li><a href="">Physics</a></li>
+                      <li><a href="">Camestry</a></li>
+                      <li><a href="">English</a></li>
+                    </ul>
+                  </div>
+                  <!-- end single sidebar -->
+                </aside>
+                <!-- / end sidebar -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ {%endblock content%}

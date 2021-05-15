@@ -1,0 +1,12 @@
+services:
+#    user.example:
+#        class: UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+services:
+    motdepasse.generer:
+        class: UserBundle\Credential\Motdepasse
+        public: true
+    username.generer:
+        class: UserBundle\Credential\Username
+        public: true
