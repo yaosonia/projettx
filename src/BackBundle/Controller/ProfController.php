@@ -21,6 +21,7 @@ class ProfController extends Controller
         if ($user === null) {
             return $this->redirect($this->generateUrl('fos_user_security_logout'));
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $professeur = new Professeur();
         $form = $this->createForm('BackBundle\Form\ProfesseurType', $professeur);
@@ -38,6 +39,7 @@ class ProfController extends Controller
 
     public function listeprofAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $prof = $em->getRepository('UserBundle:Professeur')->findAll();
         return $this->render('BackBundle:Prof:listeprof.html.twig',array(
@@ -47,6 +49,7 @@ class ProfController extends Controller
 
     public function listeparentAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $parents = $em->getRepository('UserBundle:Parents')->findAll();
         return $this->render('BackBundle:Prof:listeparent.html.twig',array(

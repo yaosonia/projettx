@@ -17,7 +17,6 @@ class DefaultController extends Controller
         if ($user === null) {
             return $this->redirect($this->generateUrl('fos_user_security_logout'));
         }
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $eleve = $em->getRepository('UserBundle:Eleve')->eleve();
         $prof = $em->getRepository('UserBundle:Professeur')->prof();

@@ -22,6 +22,7 @@ class FormationController extends Controller
         if ($user === null) {
             return $this->redirect($this->generateUrl('fos_user_security_logout'));
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $formations = $em->getRepository('BackBundle:Formation')->findAll();
         $formation = new Formation();
@@ -46,6 +47,7 @@ class FormationController extends Controller
         if ($user === null) {
             return $this->redirect($this->generateUrl('fos_user_security_logout'));
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $inscrire = new Inscrire();
         $formations = $em->getRepository('BackBundle:Formation')->findAll();
@@ -73,6 +75,7 @@ class FormationController extends Controller
         if ($user === null) {
             return $this->redirect($this->generateUrl('fos_user_security_logout'));
         }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $em = $this->getDoctrine()->getManager();
         $inscription = $em->getRepository('BackBundle:Inscrire')->find($id);
         $form = $this->createForm('BackBundle\Form\InscrireType', $inscription);
