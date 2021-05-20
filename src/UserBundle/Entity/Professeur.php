@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
          * @ORM\Table(name="professeur")
          *  * @ORM\Entity(repositoryClass="UserBundle\Repository\ProfesseurRepository")
          */
-class Professeur extends Utilisateur
+class Professeur
 {
 
          /**
@@ -76,7 +76,7 @@ class Professeur extends Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="nonvoie", type="string", length=150)
+     * @ORM\Column(name="nomvoie", type="string", length=150)
      */
     private $nomvoie;
 

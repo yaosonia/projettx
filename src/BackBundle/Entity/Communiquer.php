@@ -34,6 +34,13 @@ class Communiquer
     /**
      * @var string
      *
+     * @ORM\Column(name="objet", type="string", length=500)
+     */
+    private $objet;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="contenumessage", type="string", length=500)
      */
     private $contenumessage;
@@ -44,6 +51,11 @@ class Communiquer
      * @ORM\Column(name="datemessage", type="date")
      */
     private $datemessage;
+
+    public function __construct()
+    {
+        $this->datemessage = new \Datetime();
+    }
 
 
     /**
@@ -150,5 +162,29 @@ class Communiquer
     public function getProfesseur()
     {
         return $this->professeur;
+    }
+
+    /**
+     * Set objet
+     *
+     * @param string $objet
+     *
+     * @return Communiquer
+     */
+    public function setObjet($objet)
+    {
+        $this->objet = $objet;
+
+        return $this;
+    }
+
+    /**
+     * Get objet
+     *
+     * @return string
+     */
+    public function getObjet()
+    {
+        return $this->objet;
     }
 }

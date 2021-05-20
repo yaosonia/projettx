@@ -59,7 +59,7 @@ class CommuniquerController extends Controller
         ->setFrom('nis.desanges2021@gmail.com')
         ->setTo($parent -> getEmail())
         ->setBody(
-          '<p>Bonjour et Bienvenue sur Nid des anges!| Ne pas repondre</p>
+          '<p>Bonjour,</p>
                 <p>Vous avez un nouveau message '.$parent -> getNom().'</p> 
               <p>A bientôt,</p><p>L\'équipe Nid des anges</p>','text/html'
         );

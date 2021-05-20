@@ -37,3 +37,7 @@ updateinscription:
 deleteinscription:
     path:     /suppresioninscription/{id}
     defaults: { _controller: BackBundle:Formation:delete }
+
+nouveaumessage:
+    path:      /nouveaumessage
+    defaults: { _controller: BackBundle:Communiquer:nouveaumessage}
