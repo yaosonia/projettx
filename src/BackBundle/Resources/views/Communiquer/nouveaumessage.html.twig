@@ -1,0 +1,146 @@
+ {% extends "BackBundle::base.html.twig"%}
+
+{% block title%}MESSAGERIE{% endblock title%}
+
+{% block style %}
+{% endblock style %}
+
+{% block content %}
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+     <section class="content-header">
+       {% for msg in app.session.getflashbag.get('messagerie.success') %}
+                <div class="alert alert-success mb-2" role="alert">
+                  <strong>Infos</strong> {{ msg }}
+                </div>
+              {% endfor %}
+              {% for msg in app.session.getflashbag.get('messagerie.error') %}
+                <div class="alert alert-warning mb-2" role="alert">
+                  <strong>Infos</strong> {{ msg }}
+                </div>
+              {% endfor %}
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="mailbox.html" class="btn btn-primary btn-block mb-3">Messages envoyés</a>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Mail</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                      <i class="fas fa-inbox"></i> Messages reçus
+                      <span class="badge bg-primary float-right">12</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-envelope"></i> Messages envoyés
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-file-alt"></i> Brouillons
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="fas fa-filter"></i> En attente
+                      <span class="badge bg-warning float-right">65</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-trash-alt"></i> Supprimer
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <!-- /.col -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Filtre</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-circle text-danger"></i> Important</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-circle text-warning"></i> Promotions</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-circle text-primary"></i> Social</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-md-9">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">Nouveau message</h3>
+              </div>
+              <!-- /.card-header -->
+              {{form_start(form)}}
+            <div class="card-body">
+                  <div class="form-group">
+                      {{form_widget(form.professeur,{'attr':{'required':'','class':' form-control select2', 'style': '100%','placeholder': 'De'}})}}
+                  </div>
+                  <div class="form-group">
+                        <!--input class="form-control" placeholder="Subject:"!-->
+                    {{form_widget(form.parents,{'attr':{'required':'','class':' form-control select2', 'style': '100%'}})}}
+                    </div>
+                    <div class="form-group">
+                       <!--input class="form-control" placeholder="Subject:"!-->
+                      {{form_widget(form.objet)}}
+                    </div>
+                    <div class="form-group">
+                         {{form_widget(form.contenumessage)}}
+  
+                    </div>
+            </div>
+              <!-- /.card-body -->
+                </div>
+                <div class="card-footer">
+                      <div class="float-right">
+                        <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Envoyer</button>
+                      </div>
+                      {# <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Annuler</button> #}
+                
+              <!-- /.card-footer -->
+            </div>
+            {{form_end(form)}}
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% endblock content %}
