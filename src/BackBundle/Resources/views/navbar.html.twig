@@ -138,29 +138,70 @@
             </ul>
           </li>
         {%endif%}
+        {% if is_granted('ROLE_PROF') %}
         <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon far fa-envelope"></i>
-            <p>
-              Messages
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{path('nouveaumessage')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Nouveau message</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="pages/mailbox/compose.html" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Boîte de reception</p>
-              </a>
-            </li>
-            </li>
-          </ul>
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Messages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{path('nouveaumessage')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Nouveau message</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{path('messageenvoyer')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Messages envoyés</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{path('messagerecu')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Boîte de réception</p>
+                    </a>
+                  </li>
+                   
+            </ul>
+        </li>
+         {%endif%}
+         {% if is_granted('ROLE_PARENT') %}
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Messages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{path('nouveaumessageparent')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Nouveau message</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{path('messageenvoyerparent')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Messages envoyés</p>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a href="{{path('messagerecuparent')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Boîte de réception</p>
+                    </a>
+                  </li>
+            </ul>
+        </li>
+         {%endif%}
+         <!-- /.message fin -->
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

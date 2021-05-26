@@ -38,6 +38,67 @@ deleteinscription:
     path:     /suppresioninscription/{id}
     defaults: { _controller: BackBundle:Formation:delete }
 
+#messagerie de professeur
 nouveaumessage:
     path:      /nouveaumessage
     defaults: { _controller: BackBundle:Communiquer:nouveaumessage}
+
+messageenvoyer:
+    path:      /messageenvoyer
+    defaults: { _controller: BackBundle:Communiquer:messageenvoyer}
+
+messagerecu:
+    path:      /messagerecu
+    defaults: { _controller: BackBundle:Communiquer:messagerecu}
+
+deletemessageenvoyerprof:
+    path:     /suppresionmessageenvoyer/{id}
+    defaults: { _controller: BackBundle:Communiquer:deletemessageenvoyerprof }
+
+deletemessagerecuprof:
+    path:     /suppresionmessagerecu/{id}
+    defaults: { _controller: BackBundle:Communiquer:deletemessagerecuprof }
+
+liremessageenvoyer:
+    path:     /liremessageenvoyer/{id}
+    defaults: { _controller: BackBundle:Communiquer:liremessageenvoyer}
+
+liremessagerecu:
+    path:     /liremessagerecu/{id}
+    defaults: { _controller: BackBundle:Communiquer:liremessagerecu}
+
+#messagerie de parents
+nouveaumessageparent:
+    path:      /nouveaumessageparent
+    defaults: { _controller: BackBundle:Communiquer:nouveaumessageparent}
+
+messageenvoyerparent:
+    path:      /messageenvoyerparent
+    defaults: { _controller: BackBundle:Communiquer:messageenvoyerparent}
+
+messagerecuparent:
+    path:      /messagerecuparent
+    defaults: { _controller: BackBundle:Communiquer:messagerecuparent}
+
+liremessageparent:
+    path:     /liremessageparent/{id}
+    defaults: { _controller: BackBundle:Communiquer:liremessageparent}
+
+deletemessagerecu:
+    path:     /suppresionmessagerecuparent/{id}
+    defaults: { _controller: BackBundle:Communiquer:deletemessagerecu }
+
+deletemessageenvoyer:
+    path:     /suppresionmessageenvoyerparent/{id}
+    defaults: { _controller: BackBundle:Communiquer:deletemessageenvoyer }
+
+liremessageenvoyerparent:
+    path:     /liremessageenvoyerparent/{id}
+    defaults: { _controller: BackBundle:Communiquer:liremessageenvoyerparent}
+
+liremessagerecuparent:
+    path:     /liremessagerecuparent/{id}
+    defaults: { _controller: BackBundle:Communiquer:liremessagerecuparent}
+
+
+

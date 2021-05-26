@@ -65,6 +65,13 @@ class Professeur
      */
     private $prenom;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100)
+     */
+    private $email;
+
 
     /**
      * @var int
@@ -105,10 +112,235 @@ class Professeur
 
     public function __construct()
     {
-        parent::__construct();
+        #parent::__construct();
+ 
+    }
 
-      
-        
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set civilite
+     *
+     * @param string $civilite
+     *
+     * @return Professeur
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    /**
+     * Get civilite
+     *
+     * @return string
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Professeur
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return Professeur
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Professeur
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set numerovoie
+     *
+     * @param integer $numerovoie
+     *
+     * @return Professeur
+     */
+    public function setNumerovoie($numerovoie)
+    {
+        $this->numerovoie = $numerovoie;
+
+        return $this;
+    }
+
+    /**
+     * Get numerovoie
+     *
+     * @return integer
+     */
+    public function getNumerovoie()
+    {
+        return $this->numerovoie;
+    }
+
+    /**
+     * Set nomvoie
+     *
+     * @param string $nomvoie
+     *
+     * @return Professeur
+     */
+    public function setNomvoie($nomvoie)
+    {
+        $this->nomvoie = $nomvoie;
+
+        return $this;
+    }
+
+    /**
+     * Get nomvoie
+     *
+     * @return string
+     */
+    public function getNomvoie()
+    {
+        return $this->nomvoie;
+    }
+
+    /**
+     * Set codepostal
+     *
+     * @param integer $codepostal
+     *
+     * @return Professeur
+     */
+    public function setCodepostal($codepostal)
+    {
+        $this->codepostal = $codepostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codepostal
+     *
+     * @return integer
+     */
+    public function getCodepostal()
+    {
+        return $this->codepostal;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return Professeur
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     *
+     * @return Professeur
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
     }
 
     /**
@@ -279,211 +511,5 @@ class Professeur
     public function getCommuniquer()
     {
         return $this->communiquer;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set civilite
-     *
-     * @param string $civilite
-     *
-     * @return Professeur
-     */
-    public function setCivilite($civilite)
-    {
-        $this->civilite = $civilite;
-
-        return $this;
-    }
-
-    /**
-     * Get civilite
-     *
-     * @return string
-     */
-    public function getCivilite()
-    {
-        return $this->civilite;
-    }
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Professeur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-        $this->setUsername($nom);
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Professeur
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-        $this->setPassword($prenom);
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-
-        return $this->prenom;
-        
-    }
-
-    /**
-     * Set numerovoie
-     *
-     * @param integer $numerovoie
-     *
-     * @return Professeur
-     */
-    public function setNumerovoie($numerovoie)
-    {
-        $this->numerovoie = $numerovoie;
-
-        return $this;
-    }
-
-    /**
-     * Get numerovoie
-     *
-     * @return integer
-     */
-    public function getNumerovoie()
-    {
-        return $this->numerovoie;
-    }
-
-    /**
-     * Set nomvoie
-     *
-     * @param string $nomvoie
-     *
-     * @return Professeur
-     */
-    public function setNomvoie($nomvoie)
-    {
-        $this->nomvoie = $nomvoie;
-
-        return $this;
-    }
-
-    /**
-     * Get nomvoie
-     *
-     * @return string
-     */
-    public function getNomvoie()
-    {
-        return $this->nomvoie;
-    }
-
-    /**
-     * Set codepostal
-     *
-     * @param integer $codepostal
-     *
-     * @return Professeur
-     */
-    public function setCodepostal($codepostal)
-    {
-        $this->codepostal = $codepostal;
-
-        return $this;
-    }
-
-    /**
-     * Get codepostal
-     *
-     * @return integer
-     */
-    public function getCodepostal()
-    {
-        return $this->codepostal;
-    }
-
-    /**
-     * Set ville
-     *
-     * @param string $ville
-     *
-     * @return Professeur
-     */
-    public function setVille($ville)
-    {
-        $this->ville = $ville;
-
-        return $this;
-    }
-
-    /**
-     * Get ville
-     *
-     * @return string
-     */
-    public function getVille()
-    {
-        return $this->ville;
-    }
-
-    /**
-     * Set pays
-     *
-     * @param string $pays
-     *
-     * @return Professeur
-     */
-    public function setPays($pays)
-    {
-        $this->pays = $pays;
-
-        return $this;
-    }
-
-    /**
-     * Get pays
-     *
-     * @return string
-     */
-    public function getPays()
-    {
-        return $this->pays;
     }
 }

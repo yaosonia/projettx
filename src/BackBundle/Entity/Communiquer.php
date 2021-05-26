@@ -52,11 +52,22 @@ class Communiquer
      */
     private $datemessage;
 
+    /**
+     *  @var boolean
+     * @ORM\Column(name="isparentsend", type="boolean", nullable=true, options={"default":false})
+     */
+    private $isparentsend;
+
+    /**
+     *  @var boolean
+     * @ORM\Column(name="isprofesseursend", type="boolean", nullable=true, options={"default":false})
+     */
+    private $isprofesseursend;
+
     public function __construct()
     {
         $this->datemessage = new \Datetime();
-    }
-
+    } 
 
     /**
      * Get id
@@ -66,6 +77,30 @@ class Communiquer
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set objet
+     *
+     * @param string $objet
+     *
+     * @return Communiquer
+     */
+    public function setObjet($objet)
+    {
+        $this->objet = $objet;
+
+        return $this;
+    }
+
+    /**
+     * Get objet
+     *
+     * @return string
+     */
+    public function getObjet()
+    {
+        return $this->objet;
     }
 
     /**
@@ -117,6 +152,54 @@ class Communiquer
     }
 
     /**
+     * Set isparentsend
+     *
+     * @param boolean $isparentsend
+     *
+     * @return Communiquer
+     */
+    public function setIsparentsend($isparentsend)
+    {
+        $this->isparentsend = $isparentsend;
+
+        return $this;
+    }
+
+    /**
+     * Get isparentsend
+     *
+     * @return boolean
+     */
+    public function getIsparentsend()
+    {
+        return $this->isparentsend;
+    }
+
+    /**
+     * Set isprofesseursend
+     *
+     * @param boolean $isprofesseursend
+     *
+     * @return Communiquer
+     */
+    public function setIsprofesseursend($isprofesseursend)
+    {
+        $this->isprofesseursend = $isprofesseursend;
+
+        return $this;
+    }
+
+    /**
+     * Get isprofesseursend
+     *
+     * @return boolean
+     */
+    public function getIsprofesseursend()
+    {
+        return $this->isprofesseursend;
+    }
+
+    /**
      * Set parents
      *
      * @param \UserBundle\Entity\Parents $parents
@@ -162,29 +245,5 @@ class Communiquer
     public function getProfesseur()
     {
         return $this->professeur;
-    }
-
-    /**
-     * Set objet
-     *
-     * @param string $objet
-     *
-     * @return Communiquer
-     */
-    public function setObjet($objet)
-    {
-        $this->objet = $objet;
-
-        return $this;
-    }
-
-    /**
-     * Get objet
-     *
-     * @return string
-     */
-    public function getObjet()
-    {
-        return $this->objet;
     }
 }
