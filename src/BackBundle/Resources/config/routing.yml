@@ -41,3 +41,28 @@ deleteinscription:
 nouveaumessage:
     path:      /nouveaumessage
     defaults: { _controller: BackBundle:Communiquer:nouveaumessage}
+
+    
+getfacture:
+    path:     /facture/{id}
+    defaults: { _controller: BackBundle:Facture:genererfacture}
+
+liste_facture:
+    path:     /listefacture
+    defaults: { _controller: BackBundle:Facture:liste}
+
+save_paiement:
+    path:     /enregistrementpaiement/{id}
+    defaults: { _controller: BackBundle:Facture:save }
+
+liste_facture_enfant:
+    path:     /listefacture/{id}
+    defaults: { _controller: BackBundle:Facture:liste}
+
+liste_facture_parent:
+    path:     /listefactureparent/
+    defaults: { _controller: BackBundle:Facture:listeParent}
+
+get_facture:
+    path:     /facturation/facture/{id}
+    defaults: { _controller: BackBundle:Facture:get}

@@ -33,40 +33,40 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">SAISIR LES INFORMATIONS DE L'ELEVE</h3>
+                <h3 class="card-title">Facturation élève: <b>{{eleve.nom}} {{eleve.prenom}}</b> <br>
+                Parent <b>{{eleve.parents.nom}} {{eleve.parents.prenom}}<b></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               {{form_start(form)}}
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    {{form_widget(form.nom)}}
+                <div class="form-group">
+                    <label>Selectionner la formation</label>
+                      <div class="form-group" style="width: 100%;">
+                        {{ form_errors(form.formation) }}
+                        {{ form_widget(form.formation,{'attr':{'required':'','class':' form-control select2'}}) }}
+                      </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Prenom</label>
-                    {{form_widget(form.prenom)}}
+                    <label for="libellepaiement">Libelle paiement</label>
+                    {{form_widget(form.libellepaiement)}}
                   </div>
                   <div class="form-group">
-                    <label>Civilité</label>
-                    {{ form_widget(form.sexe,{'attr':{'required':'','class':' form-control select2', 'style': '100%'}}) }}
+                    <label for="montantpaiement">Réduction</label>
+                    {{form_widget(form.reduction)}}
                   </div>
                   <div class="form-group">
                   <label for="" style="font-weight: bold;">Date de naissance</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                      {{ form_widget(form.datenais,{'attr':{'required':'','class':' form-control datetimepicker-input','data-toggle':'datetimepicker', 'tata-target':'#reservationdate'}}) }}
+                      {{ form_widget(form.datepaiement,{'attr':{'required':'','class':' form-control datetimepicker-input','data-toggle':'datetimepicker', 'tata-target':'#reservationdate'}}) }}
                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                         </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                  <label>Selectionner le nom du parent</label>
-                    <div class="form-group" style="width: 100%;">
-                      {{ form_errors(form.parents) }}
-                      {{ form_widget(form.parents,{'attr':{'required':'','class':' form-control select2'}}) }}
-                    </div>
-                </div>
+                 
+                  
+                  
                 </div>
             </div>
                 <!-- /.card-body -->

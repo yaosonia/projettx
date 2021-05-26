@@ -137,6 +137,23 @@
               </li>
             </ul>
           </li>
+           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Facture
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ path('liste_facture') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste Factures</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         {%endif%}
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -161,6 +178,15 @@
             </li>
             </li>
           </ul>
+  
+  {% if is_granted('ROLE_PARENT') %}
+          <li class="nav-item">
+                <a href="{{path('liste_facture_parent')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Factures Enfant</p>
+                </a>
+              </li>
+  {%endif%}
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

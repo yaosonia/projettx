@@ -30,7 +30,7 @@ class CommuniquerController extends Controller
               return $this->redirect($this->generateUrl('fos_user_security_logout'));
           }
           
-        # Création d'un objet qui fait réference à la classe Communiquer  
+        # Création d'un objet qui fait réference à la classe Communiquer
         $communiquer = new Communiquer();
         $parent = new Parents();
         

@@ -1,6 +1,6 @@
 {% extends "BackBundle::base.html.twig"%}
 
-{% block title%}Liste des élèves{% endblock title%}
+{% block title%}Liste des Factures{% endblock title%}
 
 {% block style %}
     <!-- Google Font: Source Sans Pro -->
@@ -26,37 +26,42 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Liste des élèves</h3>
+                                <h3 class="card-title">Liste des Factures</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Sexe</th>
-                                        <th>Nom</th>
-                                        <th>Prénom(s)</th>
-                                        <th>Parent</th>
+                                        <th>Nom &amp; Prenom</th>
+                                        <th>Libelle</th>
+                                        <th>Montant</th>
                                         <th>Action</th>
+                                        {# <th>Prénom(s)</th>
+                                        <th>Parent</th> #}
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for e in eleves %}
+                                    {% for e in factures %}
                                     <tr>
-                                        <td>{{ e.sexe }}</td>
-                                        <td>{{ e.nom }}</td>
-                                        <td>{{ e.prenom }}</td>
-                                        <td>{{ e.parents.nom }} {{ e.parents.prenom }}</td>
-                                        <td><a href="{{path('save_paiement', {id: e.id})}}">Facturer</a></td>
+                                        <td>{{ e.eleve.nom }} {{ e.eleve.prenom }}</td>
+                                        <td>{{ e.libellepaiement }}</td>
+                                        <td>{{ e.montantfinal }}</td>
+                                        <td><a href="{{ path('get_facture', {id: e.id}) }}">Voir facture</a></td>
+                                        {# <td>{{ e.prenom }}</td>
+                                        <td>{{ e.parents.nom }} {{ e.parents.prenom }}</td> #}
                                     </tr>
                                     </tbody>
                                     {% endfor%}
                                     <tfoot>
                                     <tr>
-                                        <th>Sexe</th>
-                                        <th>Nom</th>
-                                        <th>Prénom(s)</th>
+                                        <th>Nom &amp; Prenom</th>
+                                        <th>Libelle</th>
+                                        <th>Montant</th>
                                         <th>Action</th>
+
+                                        {# <th>Prénom(s)</th>
+                                        <th>Parent</th> #}
                                     </tr>
                                     </tfoot>
                                 </table>
